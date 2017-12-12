@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<script>
+$(function() {     
+    $("#submit").click(function() {     
+    	var idd=document.getElementById("name").value;
+        $.ajax({     
+            //要用post方式      
+            type: "Post",     
+            //方法所在页面和方法名      
+            url: "http://localhost:8080/a/dia?id="+idd,     
+            contentType: "application/json; charset=utf-8",     
+            dataType: "json",     
+            success: function(data) {     
+                //返回的数据用data.d获取内容     
+               // var s=data.toJSONString();
+               
+                alert(data.pubTime);   
+                
+            },     
+            error: function(err) {     
+                alert(err);     
+            }     
+        });     
+    
+        //禁用按钮的提交      
+          
+    });     
+});   
+</script>
+<input name="name" id="name" ></input>
+<input type="button" id="submit" value="submit"></input>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script> -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+$(function() {     
+    $("#button").click(function() {     
+        $.ajax({     
+            //要用post方式      
+            type: "Post",     
+            //方法所在页面和方法名      
+            url: "http://localhost:8080/a/dia?id=1",     
+            contentType: "application/json; charset=utf-8",     
+            dataType: "json",     
+            success: function(data) {     
+                //返回的数据用data.d获取内容     
+               // var s=data.toJSONString();
+               
+                alert(data+" ");   
+                
+            },     
+            error: function(err) {     
+                alert(err);     
+            }     
+        });     
+    
+        //禁用按钮的提交      
+          
+    });     
+});   
+</script>
+<input type="button" id="button" class="button" >
+</body>
+</html>

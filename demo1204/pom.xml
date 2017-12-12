@@ -34,14 +34,34 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+	<!-- 	<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency> -->
 		<!-- 下面的是热部署 -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
     </dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			
+		</dependency>
+		<!-- aspectj 支持 -->  
+        <dependency>  
+            <groupId>aspectj</groupId>  
+            <artifactId>aspectjrt</artifactId>  
+            <version>1.5.4</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>aspectj</groupId>  
+            <artifactId>aspectjweaver</artifactId>  
+            <version>1.5.4</version>  
+        </dependency>  
+        
+        
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -52,6 +72,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 这是阿里巴巴的数据源 -->
+		  <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.18</version>
+        </dependency>
 	</dependencies>
 
 	<build>
