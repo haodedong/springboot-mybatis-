@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!-- <script type="text/javascript">
+
+$(document).ready(function(){
+	$("button").click(function(){
+		$.ajax({url:"localhost:8080/api/city?cityName=2",data:{cityName:2}success:function(result){
+			$("#div1").html(result);
+		}});
+	});
+});
+</script>
+ -->
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#button").click(function(){
+$.ajax({
+    type: 'post',
+    url: 'http://localhost:8080/a/dia',
+    contentType: 'application/json;charset=utf-8',
+    data: '{"id": 2}',
+    success: function (data) { //返回json结果
+        alert(data);
+    }
+});
+	});
+	});
+</script>
+<input type="button" name="button" id="button"/>
+</body>
+</html>

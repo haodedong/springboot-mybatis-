@@ -2,6 +2,7 @@ package com.example.demo1204.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class DiaryController {
 		return  diaryServiceImpl.selectDiaryById(id);
 	}
 	@RequestMapping(value="/dia")//@RequestParam可写可不写
-	public Diary selectDiaryMessageById(@RequestParam int id) {
+	public Diary selectDiaryMessageById(@RequestBody int id) {
 		return diaryServiceImpl.selectDiaryMessageById(id);
 
 	}
