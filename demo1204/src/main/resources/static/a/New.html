@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#submit").click(function(){
+		
+$.ajax({
+    type: 'post',
+    url: 'http://localhost:8080/ajax1',
+    contentType: 'application/json;charset=utf-8',
+    data: JSON.stringify(GetJsonData()),
+    dataType: "json",
+    success: function (data) { //返回json结果
+        alert(data);
+    }
+});
+	});
+	});
+	
+function GetJsonData() {
+	var name=document.getElementById("name").value;
+	var password=document.getElementById("password").value;
+    var json = {
+        "name": name,
+        "password": password,
+       
+    };
+    return json;
+}
+</script>
+</head>
+<body>
+	<input type="text" id="name"><p>
+	<input type="password" id="password"><p>
+	<input type="button" id="submit">
+</body>
+</html>
