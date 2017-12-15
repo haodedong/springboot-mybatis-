@@ -11,20 +11,19 @@ $(document).ready(function(){
 		
 $.ajax({
     type: 'post',
-    url: 'http://localhost:8080/ajax1',
-    contentType: 'application/json;charset=utf-8',
-    data: JSON.stringify(GetJsonData()),//JSON.stringify() 方法用于将 JavaScript 值转换为 JSON 字符串。js能够知道json对象，为了给前端。，所有转了字符串
-    dataType: "json",
-    async: true,
+    url: 'http://localhost:8080/ajax2',
+    contentType: 'application/json;charset=utf-8',//表示前端给后台的类型
+    data: JSON.stringify(GetJsonData()),
+    dataType: "json",//该text表示后台返回的是文本，json表示后台返回json
     success: function (data) { //返回json结果
-    alert("sss");
-    	
-}
-	})
+    	//var a=eval(data);
+        //alert(data.name);
+        alert(JSON.stringify(data));//如果alert，data就是对象
+    
+    }
+});
 	});
-})
-	
-	
+	});
 	
 function GetJsonData() {
 	var name=document.getElementById("name").value;
@@ -36,14 +35,11 @@ function GetJsonData() {
     };
     return json;
 }
-	})
-
-
 </script>
 </head>
 <body>
-	<input type="text" id="name"/>
-	<input type="password" id="password">
-	<input type="button" id="submit"/>
+	<input type="text" id="name"><p>
+	<input type="password" id="password"><p>
+	<input type="button" id="submit">
 </body>
 </html>

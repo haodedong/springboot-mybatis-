@@ -1,5 +1,9 @@
 package com.example.demo1204.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +17,19 @@ public class AjaxTest {
 	@Autowired
 	private AjaxService ajaxService;
 		@RequestMapping("/ajax1")
-		public String dd(@RequestBody User user) {
+		public void dd(@RequestBody User user,HttpServletResponse response) throws IOException {
 			Integer i=ajaxService.findUser(user);
-			if(null==i) {
-				return "err444or";
+			if(0==i) {
+				response.setContentType("text/html;charset=UTF-8");
+				response.getWriter().write("werwerweeeeeeeer");
+				
 			}
-			return "succ444ess";
+			response.setContentType("text/html;charset=UTF-8");
+			response.getWriter().write("werwerwr");
+			
+		}
+		@RequestMapping("/ajax2")
+		public User dd(@RequestBody User user) {
+			return user;
 		}
 }
